@@ -17,42 +17,42 @@ const Footer = () => {
                         <svg className="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
-                        <span className="logo-text">ParaHealth</span>
+                        <span className="logo-text">ParaSanté</span>
                     </div>
                     <p className="footer-description">
-                        Your trusted partner for all medical and cosmetic needs. Delivering quality and care to your doorstep.
+                        Votre partenaire de confiance pour tous vos besoins médicaux et cosmétiques. Qualité et soin livrés à votre porte.
                     </p>
                 </div>
 
                 {/* Quick Links */}
                 <div className="footer-section">
-                    <h3 className="footer-heading">Quick Links</h3>
+                    <h3 className="footer-heading">Liens Rapides</h3>
                     <ul className="footer-links">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">À Propos</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Politique de Livraison</a></li>
                     </ul>
                 </div>
 
                 {/* Categories */}
                 <div className="footer-section">
-                    <h3 className="footer-heading">Categories</h3>
+                    <h3 className="footer-heading">Catégories</h3>
                     <ul className="footer-links">
-                        <li><a href="#">Skin Care</a></li>
-                        <li><a href="#">Hair Care</a></li>
-                        <li><a href="#">Baby Care</a></li>
-                        <li><a href="#">Vitamins</a></li>
+                        <li><a href="#">Soins de la Peau</a></li>
+                        <li><a href="#">Soins Capillaires</a></li>
+                        <li><a href="#">Soins Bébé</a></li>
+                        <li><a href="#">Vitamines</a></li>
                     </ul>
                 </div>
 
                 {/* Contact Us */}
                 <div className="footer-section">
-                    <h3 className="footer-heading">Contact Us</h3>
+                    <h3 className="footer-heading">Contactez-nous</h3>
                     <ul className="footer-links">
-                        <li><a href="#">support@parahealth.com</a></li>
+                        <li><a href="#">support@parasante.dz</a></li>
                         <li><a href="#">+213 555 123 456</a></li>
-                        <li><a href="#">Algiers, Algeria</a></li>
+                        <li><a href="#">Alger, Algérie</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +60,7 @@ const Footer = () => {
             {/* Bottom Bar */}
             <div className="footer-bottom">
                 <div className="footer-container">
-                    <p className="copyright">© 2024 ParaHealth. All rights reserved.</p>
+                    <p className="copyright">© 2024 ParaSanté. Tous droits réservés.</p>
                     <div className="social-links">
                         <a href="#"><Facebook /></a>
                         <a href="#"><Twitter /></a>

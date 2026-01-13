@@ -5,44 +5,44 @@ import { Link } from 'react-router-dom';
 const topSellers = [
     {
         id: 1,
-        name: 'Hydrating Daily Lotion',
+        name: 'Lotion Hydratante Quotidienne',
         brand: 'CeraVe',
-        price: 14.99,
+        price: 1499,
         rating: 4.8,
         reviews: 128,
         image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg',
         bgColor: '#F5F5F5',
-        badge: 'Best Seller'
+        badge: 'Meilleure vente'
     },
     {
         id: 2,
-        name: 'Vitamin C Serum',
+        name: 'Sérum Vitamine C',
         brand: 'La Roche-Posay',
-        price: 29.99,
+        price: 2999,
         rating: 4.9,
         reviews: 85,
         image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg',
         bgColor: '#FFF0E6',
-        badge: 'New'
+        badge: 'Nouveau'
     },
     {
         id: 3,
-        name: 'Gentle Face Cleanser',
+        name: 'Nettoyant Visage Doux',
         brand: 'Cetaphil',
-        price: 11.50,
+        price: 1150,
         rating: 4.7,
         reviews: 210,
-        image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg', // Reusing similar image for demo
+        image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg',
         bgColor: '#E6F4FF'
     },
     {
         id: 4,
-        name: 'Daily Moisturizing Lotion',
+        name: 'Lotion Hydratante Quotidienne',
         brand: 'Aveeno',
-        price: 9.99,
+        price: 999,
         rating: 4.6,
         reviews: 156,
-        image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg', // Reusing similar image for demo
+        image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg',
         bgColor: '#F0F9EA'
     }
 ];
@@ -57,7 +57,7 @@ const TopSellers = () => {
             className="top-sellers-section"
         >
             <div className="section-container">
-                <h2 className="section-title">Top Sellers</h2>
+                <h2 className="section-title">Meilleures Ventes</h2>
                 <div className="product-grid"> {/* Using product-grid instead of top-sellers-grid to match standard layout if needed, or stick to existing class */}
                     {topSellers.map((product) => (
                         <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -77,7 +77,7 @@ const TopSellers = () => {
                                         <span className="seller-reviews">({product.reviews})</span>
                                     </div>
                                     <div className="seller-price">
-                                        ${product.price}
+                                        {product.price} DA
                                         <button className="add-to-cart-btn" aria-label="Add to cart" onClick={(e) => e.preventDefault()}>
                                             <ShoppingCart size={18} />
                                         </button>

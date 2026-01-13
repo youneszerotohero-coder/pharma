@@ -31,20 +31,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../dashboard.css';
 
 const data = [
-    { name: 'Mon', revenue: 4000, orders: 240 },
-    { name: 'Tue', revenue: 3000, orders: 198 },
-    { name: 'Wed', revenue: 5000, orders: 300 },
-    { name: 'Thu', revenue: 2780, orders: 190 },
-    { name: 'Fri', revenue: 6890, orders: 480 },
-    { name: 'Sat', revenue: 8390, orders: 520 },
-    { name: 'Sun', revenue: 7490, orders: 490 },
+    { name: 'Lun', revenue: 4000, orders: 240 },
+    { name: 'Mar', revenue: 3000, orders: 198 },
+    { name: 'Mer', revenue: 5000, orders: 300 },
+    { name: 'Jeu', revenue: 2780, orders: 190 },
+    { name: 'Ven', revenue: 6890, orders: 480 },
+    { name: 'Sam', revenue: 8390, orders: 520 },
+    { name: 'Dim', revenue: 7490, orders: 490 },
 ];
 
 const pieData = [
-    { name: 'Skin Care', value: 400 },
-    { name: 'Hair Care', value: 300 },
-    { name: 'Vitamins', value: 300 },
-    { name: 'Orthopedics', value: 200 },
+    { name: 'Soins de la Peau', value: 400 },
+    { name: 'Soins Capillaires', value: 300 },
+    { name: 'Vitamines', value: 300 },
+    { name: 'Orthopédie', value: 200 },
 ];
 
 const COLORS = ['#478240', '#5a9e51', '#74c469', '#a1d69a'];
@@ -54,10 +54,10 @@ const DashboardPage = ({ theme, toggleTheme }) => {
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
 
     const stats = [
-        { title: 'Total Revenue', value: '$24,560', change: '+12.5%', trend: 'up', icon: TrendingUp },
-        { title: 'Active Orders', value: '456', change: '+5.2%', trend: 'up', icon: ShoppingBag },
-        { title: 'New Customers', value: '1,240', change: '-2.4%', trend: 'down', icon: Users },
-        { title: 'Avg. Order', value: '$85.20', change: '+8.1%', trend: 'up', icon: BarChart3 },
+        { title: 'Chiffre d\'Affaires', value: '2.456.000 DA', change: '+12.5%', trend: 'up', icon: TrendingUp },
+        { title: 'Commandes Actives', value: '456', change: '+5.2%', trend: 'up', icon: ShoppingBag },
+        { title: 'Nouveaux Clients', value: '1.240', change: '-2.4%', trend: 'down', icon: Users },
+        { title: 'Commande Moyenne', value: '8.520 DA', change: '+8.1%', trend: 'up', icon: BarChart3 },
     ];
 
     return (
@@ -80,7 +80,7 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                 <div className="sidebar-header">
                     <div className="sidebar-logo">
                         <TrendingUp className="logo-icon" />
-                        <span>ParaHealth</span>
+                        <span>ParaSanté</span>
                     </div>
                     <button className="sidebar-toggle desktop-only" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                         {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
@@ -93,31 +93,31 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                 <nav className="sidebar-nav">
                     <a href="/dashboard" className="nav-item active">
                         <LayoutDashboard size={20} />
-                        <span>Overview</span>
+                        <span>Vue d'ensemble</span>
                     </a>
                     <a href="#" className="nav-item">
                         <ShoppingBag size={20} />
-                        <span>Orders</span>
+                        <span>Commandes</span>
                     </a>
                     <a href="#" className="nav-item">
                         <Users size={20} />
-                        <span>Customers</span>
+                        <span>Clients</span>
                     </a>
                     <a href="#" className="nav-item">
                         <BarChart3 size={20} />
-                        <span>Analytics</span>
+                        <span>Statistiques</span>
                     </a>
                     <div className="nav-divider"></div>
                     <a href="#" className="nav-item">
                         <Settings size={20} />
-                        <span>Settings</span>
+                        <span>Paramètres</span>
                     </a>
                     <button onClick={toggleTheme} className="nav-item theme-toggle-btn">
-                        <span className="theme-text">{theme === 'dark' ? '☀️ Light' : '🌙 Dark'}</span>
+                        <span className="theme-text">{theme === 'dark' ? '☀️ Clair' : '🌙 Sombre'}</span>
                     </button>
                     <a href="/" className="nav-item logout">
                         <LogOut size={20} />
-                        <span>Back to Store</span>
+                        <span>Boutique</span>
                     </a>
                 </nav>
             </aside>
@@ -132,7 +132,7 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                         </button>
                         <div className="header-search">
                             <Search size={18} className="search-icon" />
-                            <input type="text" placeholder="Search analytics..." />
+                            <input type="text" placeholder="Rechercher..." />
                         </div>
                     </div>
                     <div className="header-actions">
@@ -144,7 +144,7 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                             <img src="https://i.pinimg.com/736x/40/49/00/4049000d4675fcc0f78d3cdb868303e6.jpg" alt="User" />
                             <div className="user-info">
                                 <span className="user-name">Alex Smith</span>
-                                <span className="user-role">Administrator</span>
+                                <span className="user-role">Administrateur</span>
                             </div>
                         </div>
                     </div>
@@ -152,8 +152,8 @@ const DashboardPage = ({ theme, toggleTheme }) => {
 
                 <div className="dashboard-content">
                     <div className="content-header">
-                        <h1 className="page-title">Dashboard Overview</h1>
-                        <p className="page-subtitle">Welcome back! Here's what's happening today.</p>
+                        <h1 className="page-title">Tableau de Bord</h1>
+                        <p className="page-subtitle">Bon retour ! Voici ce qui se passe aujourd'hui.</p>
                     </div>
 
                     {/* Stats Grid */}
@@ -191,7 +191,7 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                             className="chart-card area-chart"
                         >
                             <div className="chart-header">
-                                <h3>Revenue Growth</h3>
+                                <h3>Croissance du Revenu</h3>
                                 <button className="icon-btn"><MoreVertical size={18} /></button>
                             </div>
                             <div className="chart-wrapper">
@@ -243,7 +243,7 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                             className="chart-card pie-chart"
                         >
                             <div className="chart-header">
-                                <h3>Sales by Category</h3>
+                                <h3>Ventes par Catégorie</h3>
                                 <button className="icon-btn"><MoreVertical size={18} /></button>
                             </div>
                             <div className="chart-wrapper">
@@ -282,8 +282,8 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                         className="table-card"
                     >
                         <div className="table-header">
-                            <h3>Recent Transactions</h3>
-                            <button className="text-btn">View All</button>
+                            <h3>Transactions Récentes</h3>
+                            <button className="text-btn">Tout voir</button>
                         </div>
                         <div className="table-responsive">
                             <table className="dashboard-table">
@@ -298,17 +298,17 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                                 </thead>
                                 <tbody>
                                     {[
-                                        { id: '#12045', customer: 'John Doe', date: 'Oct 24, 2023', status: 'Completed', amount: '$120.50' },
-                                        { id: '#12044', customer: 'Sarah Connor', date: 'Oct 23, 2023', status: 'Pending', amount: '$45.00' },
-                                        { id: '#12043', customer: 'Mike Ross', date: 'Oct 22, 2023', status: 'Processing', amount: '$89.20' },
-                                        { id: '#12042', customer: 'Jessica Pearson', date: 'Oct 21, 2023', status: 'Completed', amount: '$310.00' },
+                                        { id: '#12045', customer: 'Younes Z.', date: '24 Oct 2023', status: 'Terminée', amount: '12.050 DA' },
+                                        { id: '#12044', customer: 'Sarah C.', date: '23 Oct 2023', status: 'En attente', amount: '4.500 DA' },
+                                        { id: '#12043', customer: 'Amine K.', date: '22 Oct 2023', status: 'En cours', amount: '8.920 DA' },
+                                        { id: '#12042', customer: 'Imane S.', date: '21 Oct 2023', status: 'Terminée', amount: '31.000 DA' },
                                     ].map((row, i) => (
                                         <tr key={i}>
                                             <td className="font-medium">{row.id}</td>
                                             <td>{row.customer}</td>
                                             <td>{row.date}</td>
                                             <td>
-                                                <span className={`status-badge ${row.status.toLowerCase()}`}>
+                                                <span className={`status-badge ${row.status === 'Terminée' ? 'completed' : row.status === 'En attente' ? 'pending' : 'processing'}`}>
                                                     {row.status}
                                                 </span>
                                             </td>

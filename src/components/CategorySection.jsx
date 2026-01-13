@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const categories = [
-    { name: 'Baby', icon: Baby, color: '#FFE5E5', iconColor: '#FF6B6B' },
-    { name: 'Face', icon: Smile, color: '#FFF4E5', iconColor: '#F97316' },
-    { name: 'Hair', icon: Scissors, color: '#E5F4FF', iconColor: '#3B82F6' },
-    { name: 'Sun', icon: Sun, color: '#FFF9E5', iconColor: '#EAB308' },
-    { name: 'Orthopedics', icon: Bone, color: '#F3E5FF', iconColor: '#A855F7' },
-    { name: 'Vitamins', icon: Pill, color: '#E5FFE9', iconColor: '#22C55E' },
+    { name: 'Bébé', icon: Baby, color: '#FFE5E5', iconColor: '#FF6B6B' },
+    { name: 'Visage', icon: Smile, color: '#FFF4E5', iconColor: '#F97316' },
+    { name: 'Cheveux', icon: Scissors, color: '#E5F4FF', iconColor: '#3B82F6' },
+    { name: 'Solaire', icon: Sun, color: '#FFF9E5', iconColor: '#EAB308' },
+    { name: 'Orthopédie', icon: Bone, color: '#F3E5FF', iconColor: '#A855F7' },
+    { name: 'Vitamines', icon: Pill, color: '#E5FFE9', iconColor: '#22C55E' },
 ];
 
 const CategorySection = () => {
@@ -35,7 +35,7 @@ const CategorySection = () => {
             className="category-section"
         >
             <div className="section-container">
-                <h2 className="section-title">Shop by Category</h2>
+                <h2 className="section-title">Acheter par catégorie</h2>
                 <div className="category-grid">
                     {displayedCategories.map((category, index) => (
                         <div key={index} className="category-card" style={{ backgroundColor: category.color }}>

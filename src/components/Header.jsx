@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
 
 const MOCK_PRODUCTS = [
-    { id: 1, name: 'Hydrating Daily Lotion', image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg', price: 24.00, brand: 'Skin Care' },
-    { id: 2, name: 'Vitamin C Serum 20%', image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg', price: 45.00, brand: 'Radiance' },
-    { id: 3, name: 'Gentle Face Cleanser', image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg', price: 15.50, brand: 'Skin Therapy' },
-    { id: 4, name: 'Active Muscle Relief Gel', image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg', price: 12.95, brand: 'Pain Relief' },
-    { id: 5, name: 'Organic Herbal Shampoo', image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg', price: 12.50, brand: 'Hair Care' },
+    { id: 1, name: 'Lotion Hydratante Quotidienne', image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg', price: 2400, brand: 'Soin de la peau' },
+    { id: 2, name: 'Sérum Vitamine C 20%', image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg', price: 4500, brand: 'Éclat' },
+    { id: 3, name: 'Nettoyant Visage Doux', image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg', price: 1550, brand: 'Thérapie Cutanée' },
+    { id: 4, name: 'Gel de Soulagement Musculaire', image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg', price: 1295, brand: 'Anti-douleur' },
+    { id: 5, name: 'Shampooing Herbacé Bio', image: 'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg', price: 1250, brand: 'Soin Capillaire' },
 ];
 
 const Header = ({ theme, toggleTheme }) => {
@@ -28,7 +28,7 @@ const Header = ({ theme, toggleTheme }) => {
                     <svg className="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span className="logo-text">ParaHealth</span>
+                    <span className="logo-text">ParaSanté</span>
                 </div>
 
                 {/* Search Bar (Desktop) */}
@@ -38,7 +38,7 @@ const Header = ({ theme, toggleTheme }) => {
                     </svg>
                     <input
                         type="text"
-                        placeholder="Search for medicines, creams, brands..."
+                        placeholder="Rechercher des produits, marques..."
                         className="search-input"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
@@ -55,12 +55,12 @@ const Header = ({ theme, toggleTheme }) => {
                                         <img src={product.image} alt={product.name} className="search-result-img" />
                                         <div className="search-result-info">
                                             <div className="search-result-name">{product.name}</div>
-                                            <div className="search-result-price">${product.price.toFixed(2)}</div>
+                                            <div className="search-result-price">{product.price.toFixed(0)} DA</div>
                                         </div>
                                     </div>
                                 ))
                             ) : (
-                                <div className="search-no-results">No products found</div>
+                                <div className="search-no-results">Aucun produit trouvé</div>
                             )}
                         </div>
                     )}
@@ -76,7 +76,7 @@ const Header = ({ theme, toggleTheme }) => {
                             </svg>
                             <input
                                 type="text"
-                                placeholder="Search..."
+                                placeholder="Rechercher..."
                                 className="search-input"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -92,12 +92,12 @@ const Header = ({ theme, toggleTheme }) => {
                                                 <img src={product.image} alt={product.name} className="search-result-img" />
                                                 <div className="search-result-info">
                                                     <div className="search-result-name">{product.name}</div>
-                                                    <div className="search-result-price">${product.price.toFixed(2)}</div>
+                                                    <div className="search-result-price">{product.price.toFixed(0)} DA</div>
                                                 </div>
                                             </div>
                                         ))
                                     ) : (
-                                        <div className="search-no-results">No products found</div>
+                                        <div className="search-no-results">Aucun produit trouvé</div>
                                     )}
                                 </div>
                             )}
@@ -107,7 +107,7 @@ const Header = ({ theme, toggleTheme }) => {
                     <button
                         onClick={toggleTheme}
                         className="nav-link theme-toggle-btn"
-                        aria-label="Toggle theme"
+                        aria-label="Changer de thème"
                         style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center' }}
                     >
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -117,13 +117,13 @@ const Header = ({ theme, toggleTheme }) => {
                         <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
-                        <span>Account</span>
+                        <span>Compte</span>
                     </a>
                     <a href="#cart" className="nav-link cart-link">
                         <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <span>Cart</span>
+                        <span>Panier</span>
                         <span className="cart-badge">0</span>
                     </a>
                 </nav>
@@ -132,7 +132,7 @@ const Header = ({ theme, toggleTheme }) => {
                 <button
                     className="mobile-menu-toggle"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-label="Toggle menu"
+                    aria-label="Ouvrir le menu"
                 >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />

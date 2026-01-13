@@ -10,10 +10,10 @@ import '../productPage.css';
 const PRODUCTS = {
     1: {
         id: 1,
-        name: 'Hydrating Daily Lotion',
+        name: 'Lotion Hydratante Quotidienne',
         brand: 'CeraVe',
-        price: 14.99,
-        oldPrice: 19.99,
+        price: 1499,
+        oldPrice: 1999,
         rating: 4.8,
         reviews: 128,
         images: [
@@ -21,38 +21,38 @@ const PRODUCTS = {
             'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg',
             'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg',
         ],
-        description: 'A lightweight, non-greasy daily moisturizer that provides long-lasting hydration. Formulated with hyaluronic acid and ceramides to restore and maintain the skin\'s natural protective barrier.',
+        description: 'Un hydratant quotidien léger et non gras qui assure une hydratation durable. Formulé avec de l\'acide hyaluronique et des céramides pour restaurer et maintenir la barrière protectrice naturelle de la peau.',
         features: [
-            'Fragrance-free and non-comedogenic',
-            'Suitable for all skin types',
-            'Dermatologist recommended',
-            'Contains hyaluronic acid',
-            'Paraben-free formula'
+            'Sans parfum et non comédogène',
+            'Convient à tous les types de peau',
+            'Recommandé par les dermatologues',
+            'Contient de l\'acide hyaluronique',
+            'Formule sans paraben'
         ],
         inStock: true,
-        category: 'Skin Care'
+        category: 'Soins de la peau'
     },
     2: {
         id: 2,
-        name: 'Vitamin C Serum',
+        name: 'Sérum Vitamine C',
         brand: 'La Roche-Posay',
-        price: 29.99,
+        price: 2999,
         rating: 4.9,
         reviews: 85,
         images: [
             'https://i.pinimg.com/1200x/b4/13/1b/b4131b89326fdd62875c6e4fd30236d5.jpg',
             'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg',
         ],
-        description: 'Powerful antioxidant serum that brightens skin and reduces signs of aging. Contains 20% pure vitamin C for maximum effectiveness.',
+        description: 'Puissant sérum antioxydant qui illumine la peau et réduit les signes du vieillissement. Contient 20% de vitamine C pure pour une efficacité maximale.',
         features: [
-            'Brightens complexion',
-            'Reduces fine lines',
-            'Evens skin tone',
-            'Antioxidant protection',
-            'Lightweight texture'
+            'Illumine le teint',
+            'Réduit les ridules',
+            'Uniformise le grain de peau',
+            'Protection antioxydante',
+            'Texture légère'
         ],
         inStock: true,
-        category: 'Skin Care'
+        category: 'Soins de la peau'
     }
 };
 
@@ -82,7 +82,7 @@ const ProductPage = ({ theme, toggleTheme }) => {
                 {/* Back Button */}
                 <button onClick={() => navigate('/')} className="back-button">
                     <ChevronLeft size={20} />
-                    Back to Shop
+                    Retour à la boutique
                 </button>
 
                 <div className="product-content">
@@ -134,26 +134,26 @@ const ProductPage = ({ theme, toggleTheme }) => {
                                     />
                                 ))}
                             </div>
-                            <span className="rating-text">{product.rating} ({product.reviews} reviews)</span>
+                            <span className="rating-text">{product.rating} ({product.reviews} avis)</span>
                         </div>
 
                         <div className="product-price-section">
-                            <span className="current-price">${product.price}</span>
+                            <span className="current-price">{product.price} DA</span>
                             {product.oldPrice && (
-                                <span className="old-price">${product.oldPrice}</span>
+                                <span className="old-price">{product.oldPrice} DA</span>
                             )}
                             {product.oldPrice && (
                                 <span className="discount-badge">
-                                    {Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% OFF
+                                    -{Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
                                 </span>
                             )}
                         </div>
 
                         <div className="stock-status">
                             {product.inStock ? (
-                                <span className="in-stock">✓ In Stock</span>
+                                <span className="in-stock">✓ En stock</span>
                             ) : (
-                                <span className="out-of-stock">Out of Stock</span>
+                                <span className="out-of-stock">En rupture de stock</span>
                             )}
                         </div>
 
@@ -175,7 +175,7 @@ const ProductPage = ({ theme, toggleTheme }) => {
                         <div className="product-actions">
                             <button className="add-to-cart-btn primary">
                                 <ShoppingCart size={20} />
-                                Add to Cart
+                                Ajouter au panier
                             </button>
                             <button className="icon-btn">
                                 <Heart size={20} />
@@ -198,7 +198,7 @@ const ProductPage = ({ theme, toggleTheme }) => {
                                     className={`tab-header ${activeTab === 'features' ? 'active' : ''}`}
                                     onClick={() => setActiveTab('features')}
                                 >
-                                    Features
+                                    Caractéristiques
                                 </button>
                             </div>
 

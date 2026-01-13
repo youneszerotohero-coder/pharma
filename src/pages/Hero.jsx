@@ -13,26 +13,26 @@ const Hero = () => {
             <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
                 {/* Badge */}
                 <div className="hero-badge">
-                    TRUSTED MEDICAL SUPPLIER
+                    FOURNISSEUR MÉDICAL DE CONFIANCE
                 </div>
 
                 {/* Main Title */}
                 <h1 className="hero-title">
-                    Your Health, <span className="hero-title-highlight">Delivered.</span>
+                    Votre Santé, <span className="hero-title-highlight">Livrée.</span>
                 </h1>
 
                 {/* Description */}
                 <p className="hero-description">
-                    Authentic pharmaceutical and cosmetic products delivered safely across SR Welayas.
+                    Des produits pharmaceutiques et cosmétiques authentiques livrés en toute sécurité à travers les 58 Wilayas.
                 </p>
 
                 {/* CTA Buttons */}
                 <div className="hero-buttons">
                     <button className="btn btn-primary">
-                        Shop Now
+                        Acheter
                     </button>
                     <button className="btn btn-secondary">
-                        discover categories
+                        Découvrir les catégories
                     </button>
                 </div>
 
@@ -42,13 +42,13 @@ const Hero = () => {
                         <svg className="hero-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span>100% Authentic</span>
+                        <span>100% Authentique</span>
                     </div>
                     <div className="hero-feature">
                         <svg className="hero-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span>Fast Delivery</span>
+                        <span>Livraison Rapide</span>
                     </div>
                 </div>
             </div>
