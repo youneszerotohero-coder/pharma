@@ -84,7 +84,7 @@
 }
 
 .thumbnail.active {
-    border-color: var(--primary-green);
+    border-color: var(--primary-blue);
     opacity: 1;
 }
 
@@ -141,7 +141,7 @@
 .current-price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 .old-price {
@@ -216,7 +216,7 @@
 }
 
 .qty-btn:hover {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     transform: scale(1.1);
 }
 
@@ -237,7 +237,7 @@
 .add-to-cart-btn.primary {
     flex: 1;
     padding: 1rem 2rem;
-    background: var(--primary-green);
+    background: var(--primary-blue);
     color: white;
     border: none;
     border-radius: 12px;
@@ -252,9 +252,9 @@
 }
 
 .add-to-cart-btn.primary:hover {
-    background: var(--primary-green-dark);
+    background: var(--primary-blue-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(71, 130, 64, 0.3);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
 }
 
 .icon-btn {
@@ -272,9 +272,9 @@
 }
 
 .icon-btn:hover {
-    background: var(--primary-green);
+    background: var(--primary-blue);
     color: white;
-    border-color: var(--primary-green);
+    border-color: var(--primary-blue);
     transform: translateY(-2px);
 }
 
@@ -318,7 +318,7 @@
 }
 
 .tab-header.active {
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 .tab-header.active::after {
@@ -328,7 +328,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: var(--primary-green);
+    background: var(--primary-blue);
 }
 
 .tab-content {

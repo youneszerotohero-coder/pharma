@@ -5,10 +5,11 @@
 
 /* Custom Properties */
 :root {
-    --primary-green: #478240;
-    --primary-green-dark: #3a6b34;
-    --primary-green-light: #5a9e51;
-    --primary-green-light: #5a9e51;
+    --primary-blue: #3b82f6;
+    --primary-blue-dark: #2563eb;
+    --primary-blue-light: #60a5fa;
+    --primary-pink: #f472b6;
+    --primary-pink-light: rgba(244, 114, 182, 0.1);
     --text-dark: #1a1a1a;
     --text-gray: #666666;
     --bg-light: #f8f9fa;
@@ -84,7 +85,7 @@ body {
     right: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(71, 130, 64, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(244, 114, 182, 0.12) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 20s ease-in-out infinite;
 }
@@ -96,7 +97,7 @@ body {
     left: -5%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(71, 130, 64, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(244, 114, 182, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 15s ease-in-out infinite reverse;
 }
@@ -113,10 +114,10 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1.25rem;
-    background: rgba(71, 130, 64, 0.1);
-    border: 1px solid rgba(71, 130, 64, 0.2);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
     border-radius: 50px;
-    color: var(--primary-green);
+    color: var(--primary-blue);
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -126,7 +127,7 @@ body {
 }
 
 .hero-badge:hover {
-    background: rgba(71, 130, 64, 0.15);
+    background: rgba(59, 130, 246, 0.15);
     transform: translateY(-2px);
 }
 
@@ -139,7 +140,7 @@ body {
 }
 
 .hero-title-highlight {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     position: relative;
     display: inline-block;
 }
@@ -177,15 +178,15 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary-green);
+    background: var(--primary-blue);
     color: var(--white);
-    box-shadow: 0 4px 14px rgba(71, 130, 64, 0.3);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
 }
 
 .btn-primary:hover {
-    background: var(--primary-green-dark);
+    background: var(--primary-blue-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(71, 130, 64, 0.4);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 .btn-secondary {
@@ -195,8 +196,8 @@ body {
 }
 
 .btn-secondary:hover {
-    border-color: var(--primary-green);
-    color: var(--primary-green);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
     transform: translateY(-2px);
 }
 
@@ -220,7 +221,7 @@ body {
 .hero-feature-icon {
     width: 24px;
     height: 24px;
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 /* Animations */
@@ -306,7 +307,7 @@ body {
     gap: 0.5rem;
     font-weight: 700;
     font-size: 1.25rem;
-    color: var(--primary-green);
+    color: var(--primary-blue);
     text-decoration: none;
     flex-shrink: 0;
 }
@@ -314,7 +315,7 @@ body {
 .logo-icon {
     width: 28px;
     height: 28px;
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 .logo-text {
@@ -322,8 +323,9 @@ body {
 }
 
 .header-search {
-    width: 600px;
-    margin-right: auto;
+    flex: 1;
+    max-width: 1000px;
+    margin-right: 2rem;
     position: relative;
     margin-left: 2rem;
 }
@@ -351,13 +353,19 @@ body {
 }
 
 .dark .search-input {
+    background: var(--white);
     border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-dark);
+}
+
+.dark .search-input::placeholder {
+    color: var(--text-gray);
 }
 
 .search-input:focus {
     outline: none;
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(71, 130, 64, 0.1);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .search-dropdown {
@@ -373,6 +381,11 @@ body {
     max-height: 400px;
     overflow-y: auto;
     margin-top: 5px;
+}
+
+.dark .search-dropdown {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: var(--white);
 }
 
 .search-result-item {
@@ -407,7 +420,7 @@ body {
 
 .search-result-price {
     font-size: 0.85rem;
-    color: var(--primary-green);
+    color: var(--primary-blue);
     font-weight: 600;
 }
 
@@ -432,7 +445,13 @@ body {
 
 .mobile-search-bar .search-input {
     width: 100%;
-    background: #f5f5f5;
+    background: var(--white);
+}
+
+.dark .mobile-search-bar .search-input {
+    background: var(--white);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-dark);
 }
 
 .header-nav {
@@ -453,7 +472,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 .nav-icon {
@@ -469,7 +488,7 @@ body {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: var(--primary-green);
+    background: var(--primary-blue);
     color: var(--white);
     font-size: 0.7rem;
     font-weight: 700;
@@ -519,7 +538,7 @@ body {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(71, 130, 64, 0.4) 0%, rgba(71, 130, 64, 0.1) 60%, transparent 80%);
+    background: radial-gradient(circle, rgba(244, 114, 182, 0.4) 0%, rgba(244, 114, 182, 0.1) 60%, transparent 80%);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     z-index: 0;
     pointer-events: none;
@@ -537,7 +556,7 @@ body {
     left: -5%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(71, 130, 64, 0.3) 0%, rgba(71, 130, 64, 0.1) 60%, transparent 80%);
+    background: radial-gradient(circle, rgba(244, 114, 182, 0.3) 0%, rgba(244, 114, 182, 0.1) 60%, transparent 80%);
     border-radius: 50% 50% 20% 80% / 25% 80% 20% 90%;
     z-index: 0;
     pointer-events: none;
@@ -557,10 +576,11 @@ body {
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-dark);
+    margin-bottom: 1em;
 }
 
 .view-all-link {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -741,14 +761,14 @@ body {
 .product-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
-.add-to-cart-btn {
+.top-seller-card .add-to-cart-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--primary-green);
+    background: var(--primary-blue);
     border: none;
     color: var(--white);
     cursor: pointer;
@@ -758,8 +778,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.add-to-cart-btn:hover {
-    background: var(--primary-green-dark);
+.top-seller-card .add-to-cart-btn:hover {
+    background: var(--primary-blue-dark);
     transform: scale(1.1);
 }
 
@@ -786,6 +806,8 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .top-seller-card:hover {
@@ -797,13 +819,44 @@ body {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: var(--primary-green);
+    background: var(--primary-blue);
     color: var(--white);
     padding: 0.35rem 0.75rem;
     border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 700;
-    z-index: 1;
+    z-index: 10;
+}
+
+.seller-rating {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    z-index: 10;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.dark .seller-rating {
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+}
+
+.seller-rating span {
+    display: flex;
+    align-items: center;
+}
+
+.seller-reviews {
+    display: none;
 }
 
 .seller-image {
@@ -835,6 +888,10 @@ body {
 .seller-info {
     padding: 1.5rem;
     background: var(--white);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .seller-brand {
@@ -851,23 +908,43 @@ body {
     line-height: 1.4;
 }
 
-.seller-rating {
-    color: #ffc107;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.75rem;
-}
+
 
 .seller-price {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    margin-top: auto;
 }
 
 .current-price {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--primary-green);
+    color: var(--primary-blue);
+}
+
+.top-seller-card .add-to-cart-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.top-seller-card .add-to-cart-btn:hover {
+    background: var(--primary-blue-dark);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
 }
 
 .old-price {
@@ -908,7 +985,7 @@ body {
 }
 
 .footer-logo .logo-icon {
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 .footer-logo .logo-text {
@@ -943,7 +1020,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 .footer-bottom {
@@ -983,7 +1060,7 @@ body {
 }
 
 .social-links a:hover {
-    background: var(--primary-green);
+    background: var(--primary-blue);
     color: var(--white);
     transform: translateY(-3px);
 }
@@ -1132,10 +1209,11 @@ body {
     --white: #171717;
     --text-dark: #ededed;
     --text-gray: #a1a1aa;
-    --primary-green: #5a9e51;
-    --primary-green-dark: #478240;
-    --primary-green-dark: #478240;
-    --primary-green-light: #74c469;
+    --primary-blue: #60a5fa;
+    --primary-blue-dark: #3b82f6;
+    --primary-blue-light: #93c5fd;
+    --primary-pink: #f472b6;
+    --primary-pink-light: rgba(244, 114, 182, 0.1);
     --bg-hero: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
     --footer-bg: #000000;
 

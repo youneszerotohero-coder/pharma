@@ -48,6 +48,10 @@ const topSellers = [
 ];
 
 const TopSellers = () => {
+    const truncateName = (name) => {
+        return name.length > 25 ? name.substring(0, 22) + '...' : name;
+    };
+
     return (
         <motion.section
             initial={{ opacity: 0, y: 50 }}
@@ -65,17 +69,16 @@ const TopSellers = () => {
                                 {product.badge && (
                                     <span className="seller-badge">{product.badge}</span>
                                 )}
+                                <div className="seller-rating">
+                                    <Star size={14} fill="#FFC107" stroke="#FFC107" />
+                                    <span>{product.rating}</span>
+                                </div>
                                 <div className="seller-image" style={{ backgroundColor: product.bgColor }}>
                                     <img src={product.image} alt={product.name} className="seller-image-img" />
                                 </div>
                                 <div className="seller-info">
                                     <div className="seller-brand">{product.brand}</div>
-                                    <h3 className="seller-name">{product.name}</h3>
-                                    <div className="seller-rating">
-                                        <Star size={14} fill="#FFC107" stroke="#FFC107" />
-                                        <span>{product.rating}</span>
-                                        <span className="seller-reviews">({product.reviews})</span>
-                                    </div>
+                                    <h3 className="seller-name">{truncateName(product.name)}</h3>
                                     <div className="seller-price">
                                         {product.price} DA
                                         <button className="add-to-cart-btn" aria-label="Add to cart" onClick={(e) => e.preventDefault()}>

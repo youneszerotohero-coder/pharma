@@ -6,7 +6,7 @@ const Hero = () => {
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
                 <Antigravity
                     count={100}
-                    color="#478240"
+                    color="#f472b6"
                     depthFactor={3}
                 />
             </div>
