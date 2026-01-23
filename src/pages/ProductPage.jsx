@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Star, ShoppingCart, Heart, Share2, Minus, Plus, ChevronLeft } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../productPage.css';
@@ -64,6 +64,54 @@ const ProductPage = ({ theme, toggleTheme }) => {
     const [selectedImage, setSelectedImage] = useState(0);
     const [quantity, setQuantity] = useState(1);
     const [activeTab, setActiveTab] = useState('description');
+
+    // Pricing & Delivery State
+    const [selectedWilaya, setSelectedWilaya] = useState('');
+    const [promoCode, setPromoCode] = useState('');
+    const [discount, setDiscount] = useState(0);
+    const [promoError, setPromoError] = useState('');
+
+    const DELIVERY_FEES = {
+        '16': 400, // Alger
+        'default': 600
+    };
+
+    const PROMO_CODES = {
+        'PROMO10': 0.10, // 10% off
+        'SUMMER20': 0.20, // 20% off
+        'WELCOME': 500   // 500 DA off flat
+    };
+
+    const handleApplyPromo = () => {
+        const code = promoCode.trim().toUpperCase();
+        if (PROMO_CODES[code]) {
+            setDiscount(PROMO_CODES[code]);
+            setPromoError('');
+        } else {
+            setDiscount(0);
+            setPromoError('Code promo invalide');
+        }
+    };
+
+    const getDeliveryFee = () => {
+        if (!selectedWilaya) return 0;
+        return DELIVERY_FEES[selectedWilaya] || DELIVERY_FEES['default'];
+    };
+
+    const calculateTotal = () => {
+        let productTotal = product.price * quantity;
+
+        // Apply discount
+        if (discount > 0) {
+            if (discount < 1) { // Percentage
+                productTotal = productTotal * (1 - discount);
+            } else { // Flat amount
+                productTotal = Math.max(0, productTotal - discount);
+            }
+        }
+
+        return productTotal + getDeliveryFee();
+    };
 
     const handleQuantityChange = (delta) => {
         setQuantity(Math.max(1, quantity + delta));
@@ -171,17 +219,114 @@ const ProductPage = ({ theme, toggleTheme }) => {
                             </div>
                         </div>
 
+                        {/* Order Form */}
+                        <div className="order-form-section">
+                            <h3 className="order-form-title">Complétez votre commande</h3>
+                            <div className="order-form-content">
+                                <div className="form-group">
+                                    <label className="form-label">Nom complet *</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Entrez votre nom complet"
+                                        className="form-input"
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label className="form-label">Numéro de téléphone *</label>
+                                    <input
+                                        type="tel"
+                                        placeholder="Entrez votre numéro de téléphone"
+                                        className="form-input"
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label className="form-label">Wilaya</label>
+                                    <select
+                                        className="form-select"
+                                        value={selectedWilaya}
+                                        onChange={(e) => setSelectedWilaya(e.target.value)}
+                                    >
+                                        <option value="">Sélectionner</option>
+                                        <option value="16">16 - Alger</option>
+                                        <option value="31">31 - Oran</option>
+                                        <option value="25">25 - Constantine</option>
+                                        <option value="06">06 - Bejaia</option>
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <label className="form-label">Commune</label>
+                                    <select className="form-select">
+                                        <option value="">Sélectionner</option>
+                                        <option value="alger-centre">Alger Centre</option>
+                                        <option value="bab-el-oued">Bab El Oued</option>
+                                        <option value="kouba">Kouba</option>
+                                        <option value="hydra">Hydra</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* Pricing Summary */}
+                            <AnimatePresence>
+                                {selectedWilaya && (
+                                    <motion.div
+                                        initial={{ opacity: 0, height: 0, y: -10 }}
+                                        animate={{ opacity: 1, height: 'auto', y: 0 }}
+                                        exit={{ opacity: 0, height: 0, y: -10 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        className="pricing-summary overflow-hidden"
+                                    >
+                                        <div className="summary-row">
+                                            <span>Sous-total produit</span>
+                                            <span>{(product.price * quantity).toLocaleString()} DA</span>
+                                        </div>
+                                        <div className="summary-row">
+                                            <span>Livraison</span>
+                                            <span>{getDeliveryFee()} DA</span>
+                                        </div>
+                                        {discount > 0 && (
+                                            <div className="summary-row discount-text">
+                                                <span>Réduction</span>
+                                                <span>-
+                                                    {discount < 1
+                                                        ? `${Math.round((product.price * quantity) * discount)}`
+                                                        : discount} DA
+                                                </span>
+                                            </div>
+                                        )}
+                                        <div className="summary-row total">
+                                            <span>Total à payer</span>
+                                            <span>{calculateTotal().toLocaleString()} DA</span>
+                                        </div>
+
+                                        <div className="promo-section">
+                                            <label className="form-label">Code promo</label>
+                                            <div className="promo-input-group">
+                                                <input
+                                                    type="text"
+                                                    placeholder="Entrez votre code"
+                                                    className="promo-input"
+                                                    value={promoCode}
+                                                    onChange={(e) => setPromoCode(e.target.value)}
+                                                />
+                                                <button onClick={handleApplyPromo} className="promo-btn">
+                                                    Appliquer
+                                                </button>
+                                            </div>
+                                            {promoError && <p className="text-red-500 text-sm mt-2">{promoError}</p>}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
                         {/* Action Buttons */}
                         <div className="product-actions">
                             <button className="add-to-cart-btn primary">
                                 <ShoppingCart size={20} />
                                 Ajouter au panier
                             </button>
-                            <button className="icon-btn">
-                                <Heart size={20} />
-                            </button>
-                            <button className="icon-btn">
-                                <Share2 size={20} />
+                            <button className="add-to-cart-btn secondary bg-green-600 hover:bg-green-700 text-white flex-1 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5" style={{ background: '#16a34a', color: 'white' }}>
+                                Acheter maintenant
                             </button>
                         </div>
 
@@ -215,12 +360,12 @@ const ProductPage = ({ theme, toggleTheme }) => {
                                 )}
                             </div>
                         </div>
-                    </motion.div>
-                </div>
-            </motion.div>
+                    </motion.div >
+                </div >
+            </motion.div >
 
             <Footer />
-        </div>
+        </div >
     );
 };
 

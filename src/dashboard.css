@@ -505,8 +505,8 @@
 }
 
 .status-badge.processing {
-    background: rgba(59, 130, 246, 0.1);
-    color: #3b82f6;
+    background: rgba(179, 235, 242, 0.1);
+    color: #4DD0E1;
 }
 
 @media (max-width: 1200px) {

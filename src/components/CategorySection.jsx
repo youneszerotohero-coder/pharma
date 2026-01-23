@@ -1,50 +1,60 @@
-import { Baby, Smile, Scissors, Sun, Bone, Pill } from 'lucide-react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const categories = [
-    { name: 'Bébé', icon: Baby, color: '#FFE5E5', iconColor: '#FF6B6B' },
-    { name: 'Visage', icon: Smile, color: '#FFF4E5', iconColor: '#F97316' },
-    { name: 'Cheveux', icon: Scissors, color: '#E5F4FF', iconColor: '#3B82F6' },
-    { name: 'Solaire', icon: Sun, color: '#FFF9E5', iconColor: '#EAB308' },
-    { name: 'Orthopédie', icon: Bone, color: '#F3E5FF', iconColor: '#A855F7' },
-    { name: 'Vitamines', icon: Pill, color: '#E5FFE9', iconColor: '#22C55E' },
+    { name: 'Bébé', image: 'https://i.pinimg.com/736x/da/85/27/da852720586700f5548eb4c50b55c8fe.jpg' },
+    { name: 'Visage', image: 'https://i.pinimg.com/736x/81/98/dd/8198dd32d94c0c3cc950af3d6643e228.jpg' },
+    { name: 'Cheveux', image: 'https://i.pinimg.com/1200x/a1/04/40/a10440858e9ea5f6d2bc43e07f4d9505.jpg' },
+    { name: 'Solaire', image: 'https://i.pinimg.com/736x/c3/7a/8a/c37a8a18216b4e8e5ca5b74d7afff26d.jpg' },
 ];
 
 const CategorySection = () => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
-    const displayedCategories = isMobile ? categories.slice(0, 4) : categories;
-
     return (
         <motion.section
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="category-section"
+            className="category-section py-12"
         >
-            <div className="section-container">
-                <h2 className="section-title">Acheter par catégorie</h2>
-                <div className="category-grid">
-                    {displayedCategories.map((category, index) => (
-                        <div key={index} className="category-card" style={{ backgroundColor: category.color }}>
-                            <div className="category-icon">
-                                <category.icon size={40} color={category.iconColor} strokeWidth={1.5} />
-                            </div>
-                            <span className="category-name">{category.name}</span>
-                        </div>
-                    ))}
+            <div className="section-container max-w-7xl mx-auto px-4">
+                <h2 className="section-title text-3xl font-bold mb-8 text-center">Acheter par catégorie</h2>
+                <div className="w-full flex justify-center">
+                    <Carousel
+                        opts={{
+                            align: "start",
+                        }}
+                        className="w-[87%]"
+                    >
+                        <CarouselContent className=''>
+                            {categories.map((category, index) => (
+                                <CarouselItem key={index} className="md:basis-1/3 basis-full pl-4">
+                                    <div className="relative h-[300px] w-[95%] justify-self-center overflow-hidden rounded-xl group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300">
+                                        {/* Background Image */}
+                                        <div
+                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                            style={{ backgroundImage: `url(${category.image})` }}
+                                        />
+                                        {/* Overlay */}
+                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                                        {/* Content */}
+                                        <div className="absolute inset-0 flex items-center justify-center">
+                                            <h3 className="text-white text-3xl font-bold uppercase tracking-wider drop-shadow-md">{category.name}</h3>
+                                        </div>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
                 </div>
             </div>
         </motion.section>
