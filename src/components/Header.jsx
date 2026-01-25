@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Truck, ShieldCheck, CheckCircle } from 'lucide-react';
 
 const MOCK_PRODUCTS = [
     { id: 1, name: 'Lotion Hydratante Quotidienne', image: 'https://i.pinimg.com/1200x/db/aa/c4/dbaac4e9b7c92cfd5d0fd33e1a2d8556.jpg', price: 2400, brand: 'Soin de la peau' },
@@ -22,6 +22,23 @@ const Header = ({ theme, toggleTheme }) => {
 
     return (
         <header className="header">
+            {/* Top Bar */}
+            <div style={{ backgroundColor: 'var(--primary-blue)', color: 'white' }}>
+                <div className="header-container" style={{ padding: '0.5rem 2rem', minHeight: 'auto', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem', fontSize: '0.85rem', fontWeight: 500 }}>
+                    {/* <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <Truck size={16} />
+                        <span>Livraison 69 Wilayas</span>
+                    </div> */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <ShieldCheck size={16} />
+                        <span>Paiement à la livraison</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <CheckCircle size={16} />
+                        <span>Qualité</span>
+                    </div>
+                </div>
+            </div>
             <div className="header-container">
                 {/* Logo */}
                 <div className="header-logo">

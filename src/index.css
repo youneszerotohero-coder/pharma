@@ -65,10 +65,13 @@ body {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    background-image: url('/heroBg.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 2rem;
-    background: var(--bg-hero);
+    /* background: var(--bg-hero); */
     position: relative;
     overflow: hidden;
 }
@@ -117,7 +120,7 @@ body {
     font-weight: 500;
     letter-spacing: 0.5px;
     margin-bottom: 2rem;
-    margin-top: 2em;
+    margin-top: 2rem;
     transition: all 0.3s ease;
 }
 
@@ -1127,7 +1130,7 @@ body {
     }
 
     .hero-badge {
-        margin-top: 5em;
+        margin-top: 8em;
     }
 
     .header-search {

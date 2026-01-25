@@ -4,7 +4,7 @@ import arrowData from '../assets/arrow.json';
 const Hero = () => {
     return (
         <section className="hero">
-            <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+            {/* <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden">
                 <img
                     src="/cremeJar.png"
                     alt="Creme Jar"
@@ -22,8 +22,11 @@ const Hero = () => {
                     className="absolute bottom-[12%] right-[5%] md:bottom-[25%] md:right-[10%] w-14 md:w-22 opacity-0 animate-slide-right transition-all duration-500"
                     style={{ animationDelay: '0.1s' }}
                 />
-            </div>
+            </div> */}
             <div className="hero-content" style={{ position: 'relative', zIndex: 10, marginTop: '-2rem' }}>
+                <div className="hero-badge">
+                    FOURNISSEUR MÉDICAL DE CONFIANCE
+                </div>
                 {/* Branding Title */}
                 <h1 className="hero-title !mb-4">
                     Puréva
