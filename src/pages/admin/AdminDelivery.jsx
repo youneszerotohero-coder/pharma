@@ -15,7 +15,7 @@ const AdminDelivery = () => {
         <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Livraison</h1>
-                <Button className="bg-black text-white dark:bg-white dark:text-black">
+                <Button className="bg-[#DB8B89] text-white hover:bg-[#C07573]">
                     <Save className="w-4 h-4 mr-2" />
                     Sauvegarder tout
                 </Button>
@@ -27,7 +27,7 @@ const AdminDelivery = () => {
                     <input
                         type="text"
                         placeholder="Rechercher une wilaya..."
-                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#DB8B89]/20 focus:border-[#DB8B89]"
                     />
                 </div>
             </div>
@@ -52,7 +52,7 @@ const AdminDelivery = () => {
                                     <td className="px-6 py-4 text-gray-500">{wilaya.code}</td>
                                     <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">{wilaya.name}</td>
                                     <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" defaultChecked={wilaya.active} className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                                        <input type="checkbox" defaultChecked={wilaya.active} className="w-4 h-4 rounded border-gray-300 text-[#DB8B89] focus:ring-[#DB8B89]" />
                                     </td>
                                     <td className="px-6 py-4">
                                         <input type="number" defaultValue={wilaya.homePrice} className="w-24 px-2 py-1 text-right border rounded bg-transparent" />

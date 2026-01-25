@@ -27,7 +27,7 @@ const AdminProducts = () => {
         <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Gestion des Produits</h1>
-                <Button onClick={() => setIsAddProductOpen(true)} className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+                <Button onClick={() => setIsAddProductOpen(true)} className="bg-[#DB8B89] text-white hover:bg-[#C07573] dark:bg-[#DB8B89] dark:text-white dark:hover:bg-[#C07573]">
                     <Plus className="w-4 h-4 mr-2" />
                     Ajouter un produit
                 </Button>
@@ -43,8 +43,8 @@ const AdminProducts = () => {
                             className={`
                                 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors
                                 ${activeTab === tab.id
-                                    ? 'border-black text-black dark:border-white dark:text-white'
-                                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'}
+                                    ? 'border-[#DB8B89] text-[#DB8B89]'
+                                    : 'border-transparent text-gray-500 hover:text-[#DB8B89] hover:border-pink-200 dark:text-gray-400 dark:hover:text-[#DB8B89]'}
                             `}
                         >
                             {tab.label}
@@ -63,7 +63,7 @@ const AdminProducts = () => {
                             <input
                                 type="text"
                                 placeholder="Rechercher un produit..."
-                                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#DB8B89]/20 focus:border-[#DB8B89]"
                             />
                         </div>
                         <button className="px-4 py-2 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors">
@@ -104,7 +104,7 @@ const AdminProducts = () => {
                                             </td>
                                             <td className="px-6 py-4 text-right">
                                                 <div className="flex items-center justify-end gap-2">
-                                                    <button className="p-2 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                                    <button className="p-2 text-gray-400 hover:text-[#DB8B89] dark:hover:text-[#DB8B89] transition-colors">
                                                         <Edit className="w-4 h-4" />
                                                     </button>
                                                     <button className="p-2 text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors">
@@ -124,7 +124,7 @@ const AdminProducts = () => {
             {activeTab === 'categories' && (
                 <div className="space-y-4">
                     <div className="flex justify-end">
-                        <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black">
+                        <Button className="bg-[#DB8B89] text-white hover:bg-[#C07573]">
                             <Plus className="w-4 h-4 mr-2" />
                             Ajouter Catégorie
                         </Button>
@@ -147,7 +147,7 @@ const AdminProducts = () => {
                                         <td className="px-6 py-4 dark:text-gray-400">12</td>
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex justify-end gap-2">
-                                                <button className="p-2 text-gray-400 hover:text-indigo-600"><Edit className="w-4 h-4" /></button>
+                                                <button className="p-2 text-gray-400 hover:text-[#DB8B89]"><Edit className="w-4 h-4" /></button>
                                                 <button className="p-2 text-gray-400 hover:text-red-600"><Trash2 className="w-4 h-4" /></button>
                                             </div>
                                         </td>
@@ -162,7 +162,7 @@ const AdminProducts = () => {
             {activeTab === 'subcategories' && (
                 <div className="space-y-4">
                     <div className="flex justify-end">
-                        <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black">
+                        <Button className="bg-[#DB8B89] text-white hover:bg-[#C07573]">
                             <Plus className="w-4 h-4 mr-2" />
                             Ajouter Sous-catégorie
                         </Button>
@@ -183,7 +183,7 @@ const AdminProducts = () => {
                                         <td className="px-6 py-4 dark:text-gray-400">Category 1</td>
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex justify-end gap-2">
-                                                <button className="p-2 text-gray-400 hover:text-indigo-600"><Edit className="w-4 h-4" /></button>
+                                                <button className="p-2 text-gray-400 hover:text-[#DB8B89]"><Edit className="w-4 h-4" /></button>
                                                 <button className="p-2 text-gray-400 hover:text-red-600"><Trash2 className="w-4 h-4" /></button>
                                             </div>
                                         </td>
@@ -198,7 +198,7 @@ const AdminProducts = () => {
             {activeTab === 'specifications' && (
                 <div className="space-y-4">
                     <div className="flex justify-end">
-                        <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black">
+                        <Button className="bg-[#DB8B89] text-white hover:bg-[#C07573]">
                             <Plus className="w-4 h-4 mr-2" />
                             Ajouter Spécification
                         </Button>
@@ -224,7 +224,7 @@ const AdminProducts = () => {
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <div className="flex justify-end gap-2">
-                                            <button className="p-2 text-gray-400 hover:text-indigo-600"><Edit className="w-4 h-4" /></button>
+                                            <button className="p-2 text-gray-400 hover:text-[#DB8B89]"><Edit className="w-4 h-4" /></button>
                                             <button className="p-2 text-gray-400 hover:text-red-600"><Trash2 className="w-4 h-4" /></button>
                                         </div>
                                     </td>
@@ -273,7 +273,7 @@ const AdminProducts = () => {
                     </div>
                     <DialogFooter>
                         <Button variant="outline" onClick={() => setIsAddProductOpen(false)}>Annuler</Button>
-                        <Button className="bg-black text-white dark:bg-white dark:text-black">Sauvegarder</Button>
+                        <Button className="bg-[#DB8B89] text-white hover:bg-[#C07573]">Sauvegarder</Button>
                     </DialogFooter>
                 </DialogContent>
             </Dialog>

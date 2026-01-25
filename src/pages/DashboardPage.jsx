@@ -47,7 +47,7 @@ const pieData = [
     { name: 'Orthopédie', value: 200 },
 ];
 
-const COLORS = ['#478240', '#5a9e51', '#74c469', '#a1d69a'];
+const COLORS = ['#DB8B89', '#E5A8A7', '#F0C4C3', '#F8E4E0'];
 
 const DashboardPage = ({ theme, toggleTheme }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -80,7 +80,7 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                 <div className="sidebar-header">
                     <div className="sidebar-logo">
                         <TrendingUp className="logo-icon" />
-                        <span>ParaSanté</span>
+                        <span>Puréva</span>
                     </div>
                     <button className="sidebar-toggle desktop-only" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                         {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
@@ -199,8 +199,8 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                                     <AreaChart data={data}>
                                         <defs>
                                             <linearGradient id="colorRev" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="5%" stopColor="#478240" stopOpacity={0.3} />
-                                                <stop offset="95%" stopColor="#478240" stopOpacity={0} />
+                                                <stop offset="5%" stopColor="#DB8B89" stopOpacity={0.3} />
+                                                <stop offset="95%" stopColor="#DB8B89" stopOpacity={0} />
                                             </linearGradient>
                                         </defs>
                                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={theme === 'dark' ? '#333' : '#eee'} />
@@ -227,7 +227,7 @@ const DashboardPage = ({ theme, toggleTheme }) => {
                                         <Area
                                             type="monotone"
                                             dataKey="revenue"
-                                            stroke="#478240"
+                                            stroke="#DB8B89"
                                             strokeWidth={3}
                                             fillOpacity={1}
                                             fill="url(#colorRev)"

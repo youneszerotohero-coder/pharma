@@ -254,7 +254,7 @@
 .add-to-cart-btn.primary:hover {
     background: var(--primary-blue-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 24px rgba(219, 139, 137, 0.3);
 }
 
 .icon-btn {
@@ -460,7 +460,7 @@
 .form-select:focus {
     border-color: var(--primary-blue);
     background: var(--white);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(219, 139, 137, 0.15);
 }
 
 .dark .form-input,
@@ -472,7 +472,8 @@
 .dark .form-input:focus,
 .dark .form-select:focus {
     border-color: var(--primary-blue);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(219, 139, 137, 0.1);
 }
 
 .form-row {
@@ -528,8 +529,27 @@
     margin-top: 1.5rem;
 }
 
+.promo-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: all 0.2s ease;
+}
+
+.promo-toggle-btn:hover {
+    color: var(--primary-blue-dark);
+    text-decoration: none;
+}
+
 .promo-input-group {
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
 }
 
@@ -555,19 +575,21 @@
 }
 
 .promo-btn {
-    padding: 0 1.5rem;
-    background: var(--text-dark);
+    height: 50px;
+    padding: 0 2rem;
+    background: var(--primary-blue);
     color: var(--white);
     border: none;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .promo-btn:hover {
-    opacity: 0.9;
+    background: var(--primary-blue-dark);
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(219, 139, 137, 0.2);
 }
 
 .discount-text {

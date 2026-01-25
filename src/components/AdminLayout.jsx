@@ -42,12 +42,12 @@ const AdminLayout = ({ theme, toggleTheme }) => {
             >
                 <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200 dark:border-zinc-800">
                     <Link to="/admin" className="flex items-center gap-2 font-bold text-xl tracking-tight">
-                        <div className="w-8 h-8 rounded bg-black dark:bg-white flex items-center justify-center text-white dark:text-black font-serif">
+                        <div className="w-8 h-8 rounded bg-[#DB8B89] flex items-center justify-center text-white font-serif">
                             A
                         </div>
-                        <span>Admin</span>
+                        <span className="text-[#DB8B89]">Admin</span>
                     </Link>
-                    <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-1 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800">
+                    <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-1 rounded-md hover:bg-pink-50 dark:hover:bg-pink-900/10">
                         <X size={20} />
                     </button>
                 </div>
@@ -62,8 +62,8 @@ const AdminLayout = ({ theme, toggleTheme }) => {
                                 className={cn(
                                     "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
                                     isActive
-                                        ? "bg-black text-white dark:bg-white dark:text-black shadow-md"
-                                        : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-zinc-800 hover:text-gray-900 dark:hover:text-gray-200"
+                                        ? "bg-[#DB8B89] text-white shadow-lg shadow-pink-500/20"
+                                        : "text-gray-600 dark:text-gray-400 hover:bg-pink-50 dark:hover:bg-pink-900/10 hover:text-[#DB8B89] dark:hover:text-[#DB8B89]"
                                 )}
                             >
                                 <item.icon size={18} />
@@ -81,7 +81,7 @@ const AdminLayout = ({ theme, toggleTheme }) => {
                     <button
                         onClick={() => setIsSidebarOpen(true)}
                         className={cn(
-                            "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 lg:hidden",
+                            "p-2 rounded-md hover:bg-pink-50 dark:hover:bg-pink-900/10 lg:hidden",
                             isSidebarOpen && "hidden"
                         )}
                     >
@@ -98,12 +98,12 @@ const AdminLayout = ({ theme, toggleTheme }) => {
                         >
                             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
                         </button>
-                        <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500"></div>
+                        <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-[#DB8B89] to-[#F8E4E0]"></div>
                     </div>
                 </header>
 
                 {/* Page Content */}
-                <main className="flex-1 overflow-y-auto p-6 bg-gray-50 dark:bg-black/50 scroll-smooth">
+                <main className="flex-1 overflow-y-auto p-6 bg-gray-50/50 dark:bg-black/20 scroll-smooth">
                     <div className="mx-auto max-w-7xl animate-in fade-in slide-in-from-bottom-4 duration-500">
                         <Outlet />
                     </div>
@@ -113,7 +113,7 @@ const AdminLayout = ({ theme, toggleTheme }) => {
             {/* Overlay for mobile sidebar */}
             {isSidebarOpen && (
                 <div
-                    className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm"
+                    className="fixed inset-0 bg-pink-900/10 z-40 lg:hidden backdrop-blur-sm"
                     onClick={() => setIsSidebarOpen(false)}
                 ></div>
             )}

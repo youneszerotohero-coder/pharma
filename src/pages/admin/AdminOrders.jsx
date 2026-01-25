@@ -21,8 +21,8 @@ const AdminOrders = () => {
         let styles = '';
         switch (status) {
             case 'En attente': styles = 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'; break;
-            case 'Confirmée': styles = 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'; break;
-            case 'Expédiée': styles = 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-400'; break;
+            case 'Confirmée': styles = 'bg-pink-100 text-pink-800 dark:bg-[#DB8B89]/20 dark:text-[#DB8B89]'; break;
+            case 'Expédiée': styles = 'bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-400'; break;
             case 'Livrée': styles = 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'; break;
             case 'Annulée': styles = 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400'; break;
             default: styles = 'bg-gray-100 text-gray-800';
@@ -53,8 +53,8 @@ const AdminOrders = () => {
                             onClick={() => setStatusFilter(status)}
                             className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all
                                 ${statusFilter === status
-                                    ? 'bg-white dark:bg-zinc-800 text-black dark:text-white shadow-sm'
-                                    : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}
+                                    ? 'bg-[#DB8B89] text-white shadow-sm'
+                                    : 'text-gray-500 hover:text-[#DB8B89] dark:hover:text-[#DB8B89]'}
                             `}
                         >
                             {status}
@@ -97,7 +97,7 @@ const AdminOrders = () => {
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <div className="flex justify-end gap-2">
-                                            <button className="p-2 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400" title="Voir détails">
+                                            <button className="p-2 text-gray-400 hover:text-[#DB8B89] dark:hover:text-[#DB8B89]" title="Voir détails">
                                                 <Eye className="w-4 h-4" />
                                             </button>
                                             <button className="p-2 text-gray-400 hover:text-green-600 dark:hover:text-green-400" title="Confirmer">

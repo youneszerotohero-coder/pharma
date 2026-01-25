@@ -1,39 +1,56 @@
-import Antigravity from '../components/Antigravity';
+import Lottie from 'lottie-react';
+import arrowData from '../assets/arrow.json';
 
 const Hero = () => {
     return (
         <section className="hero">
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
-                <Antigravity
-                    count={100}
-                    color="#FFC5D3"
-                    depthFactor={3}
+            <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+                <img
+                    src="/cremeJar.png"
+                    alt="Creme Jar"
+                    className="absolute top-[10%] left-[5%] md:top-[10%] md:left-[5%] w-16 md:w-24 opacity-0 animate-slide-left transition-all duration-500"
+                />
+                <img
+                    src="/cremeTape.png"
+                    alt="Creme Tape"
+                    className="absolute bottom-[8%] left-[5%] md:bottom-[10%] md:left-[8%] w-16 md:w-24 opacity-0 animate-slide-left-alt transition-all duration-500"
+                    style={{ animationDelay: '0.2s' }}
+                />
+                <img
+                    src="/serum.png"
+                    alt="Serum"
+                    className="absolute bottom-[12%] right-[5%] md:bottom-[25%] md:right-[10%] w-14 md:w-22 opacity-0 animate-slide-right transition-all duration-500"
+                    style={{ animationDelay: '0.1s' }}
                 />
             </div>
-            <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
-                {/* Badge */}
-                <div className="hero-badge">
-                    FOURNISSEUR MÉDICAL DE CONFIANCE
-                </div>
-
-                {/* Main Title */}
-                <h1 className="hero-title">
-                    Votre Santé, <span className="hero-title-highlight">Livrée.</span>
+            <div className="hero-content" style={{ position: 'relative', zIndex: 10, marginTop: '-2rem' }}>
+                {/* Branding Title */}
+                <h1 className="hero-title !mb-4">
+                    Puréva
                 </h1>
 
-                {/* Description */}
-                <p className="hero-description">
-                    Des produits pharmaceutiques et cosmétiques authentiques livrés en toute sécurité à travers les 58 Wilayas.
+                {/* Catchphrase */}
+                <p className="text-dark dark:text-white text-xl md:text-2xl lg:text-3xl font-medium tracking-tight !mb-10 max-w-3xl mx-auto opacity-90">
+                    Au service de votre <span className="text-[#DB8B89]">beauté & bien être</span>
                 </p>
 
                 {/* CTA Buttons */}
                 <div className="hero-buttons">
-                    <button className="btn btn-primary">
-                        Acheter
-                    </button>
-                    <button className="btn btn-secondary">
-                        Découvrir les catégories
-                    </button>
+                    <div className="relative inline-flex items-center">
+                        <button className="btn btn-primary px-8 py-3 text-lg">
+                            Acheter
+                        </button>
+
+                        {/* CTA Indicator */}
+                        <div className="absolute flex items-center gap-2 md:gap-0 pointer-events-none select-none translate-y-[70px] md:translate-y-[0] md:translate-x-[-210px]">
+                            <span className="text-[#DB8B89] font-handwriting text-xl md:text-2xl italic whitespace-nowrap md:translate-y-[60px]" style={{ fontFamily: 'var(--font-cursive, cursive)' }}>
+                                En un clic
+                            </span>
+                            <div className="w-16 h-16 md:w-20 md:h-20 translate-y-[10px] md:translate-y-[20px] rotate-180 rotate-x-180 md:rotate-119 md:rotate-x-0 ">
+                                <Lottie animationData={arrowData} loop={true} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Features */}

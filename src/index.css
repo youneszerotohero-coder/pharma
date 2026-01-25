@@ -1,15 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 /* Custom Properties */
 :root {
-    --primary-blue: #B3EBF2;
-    --primary-blue-dark: #4DD0E1;
-    --primary-blue-light: #E0F7FA;
-    --primary-pink: #FFC5D3;
-    --primary-pink-light: rgba(255, 197, 211, 0.1);
+    --primary-blue: #DB8B89;
+    --primary-blue-dark: #C07573;
+    --primary-blue-light: #F8E4E0;
+    --primary-pink: #F8E4E0;
+    --primary-pink-light: rgba(219, 139, 137, 0.1);
     --text-dark: #1a1a1a;
     --text-gray: #666666;
     --bg-light: #f8f9fa;
@@ -47,7 +48,8 @@
     --sidebar-accent: oklch(0.97 0 0);
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --sidebar-ring: oklch(0.708 0.015 259.02);
+    --font-cursive: 'Dancing Script', 'Pacifico', cursive;
 }
 
 body {
@@ -63,7 +65,7 @@ body {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     padding: 2rem;
     background: var(--bg-hero);
@@ -78,7 +80,7 @@ body {
     right: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(255, 197, 211, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(219, 139, 137, 0.12) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 20s ease-in-out infinite;
 }
@@ -107,8 +109,8 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1.25rem;
-    background: rgba(179, 235, 242, 0.1);
-    border: 1px solid rgba(179, 235, 242, 0.2);
+    background: rgba(219, 139, 137, 0.1);
+    border: 1px solid rgba(219, 139, 137, 0.2);
     border-radius: 50px;
     color: var(--primary-blue);
     font-size: 0.875rem;
@@ -120,7 +122,7 @@ body {
 }
 
 .hero-badge:hover {
-    background: rgba(179, 235, 242, 0.15);
+    background: rgba(219, 139, 137, 0.15);
     transform: translateY(-2px);
 }
 
@@ -246,6 +248,54 @@ body {
     }
 }
 
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px) rotate(-15deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(-15deg);
+    }
+}
+
+@keyframes slideInLeftAlt {
+    from {
+        opacity: 0;
+        transform: translateX(-100px) rotate(15deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(15deg);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px) rotate(-15deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(-15deg);
+    }
+}
+
+.animate-slide-left {
+    animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.animate-slide-left-alt {
+    animation: slideInLeftAlt 1.2s ease-out forwards;
+}
+
+.animate-slide-right {
+    animation: slideInRight 1.2s ease-out forwards;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero {
@@ -358,7 +408,7 @@ body {
 .search-input:focus {
     outline: none;
     border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(179, 235, 242, 0.1);
+    box-shadow: 0 0 0 3px rgba(219, 139, 137, 0.15);
 }
 
 .search-dropdown {
@@ -531,7 +581,7 @@ body {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255, 197, 211, 0.4) 0%, rgba(255, 197, 211, 0.1) 60%, transparent 80%);
+    background: radial-gradient(circle, rgba(219, 139, 137, 0.4) 0%, rgba(219, 139, 137, 0.1) 60%, transparent 80%);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     z-index: 0;
     pointer-events: none;
@@ -549,7 +599,7 @@ body {
     left: -5%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(255, 197, 211, 0.3) 0%, rgba(255, 197, 211, 0.1) 60%, transparent 80%);
+    background: radial-gradient(circle, rgba(219, 139, 137, 0.3) 0%, rgba(219, 139, 137, 0.1) 60%, transparent 80%);
     border-radius: 50% 50% 20% 80% / 25% 80% 20% 90%;
     z-index: 0;
     pointer-events: none;
@@ -1202,11 +1252,11 @@ body {
     --white: #171717;
     --text-dark: #ededed;
     --text-gray: #a1a1aa;
-    --primary-blue: #B3EBF2;
-    --primary-blue-dark: #4DD0E1;
-    --primary-blue-light: #E0F7FA;
-    --primary-pink: #FFC5D3;
-    --primary-pink-light: rgba(255, 197, 211, 0.1);
+    --primary-blue: #DB8B89;
+    --primary-blue-dark: #C07573;
+    --primary-blue-light: #F8E4E0;
+    --primary-pink: #F8E4E0;
+    --primary-pink-light: rgba(219, 139, 137, 0.1);
     --bg-hero: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
     --footer-bg: #000000;
 

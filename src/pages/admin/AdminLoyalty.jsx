@@ -11,8 +11,8 @@ const AdminLoyalty = () => {
                 {/* Conversion Settings */}
                 <div className="bg-white dark:bg-zinc-900 rounded-xl border border-gray-200 dark:border-zinc-800 p-6 shadow-sm space-y-6">
                     <div className="flex items-center gap-3">
-                        <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                            <Gift className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                        <div className="p-2 bg-pink-100 dark:bg-[#DB8B89]/20 rounded-lg">
+                            <Gift className="w-5 h-5 text-[#DB8B89]" />
                         </div>
                         <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Règles de Conversion</h2>
                     </div>
@@ -43,7 +43,7 @@ const AdminLoyalty = () => {
                         </div>
                     </div>
 
-                    <Button className="w-full bg-black text-white dark:bg-white dark:text-black">
+                    <Button className="w-full bg-[#DB8B89] text-white hover:bg-[#C07573]">
                         <Save className="w-4 h-4 mr-2" />
                         Sauvegarder les règles
                     </Button>

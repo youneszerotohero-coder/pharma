@@ -25,10 +25,12 @@ const Header = ({ theme, toggleTheme }) => {
             <div className="header-container">
                 {/* Logo */}
                 <div className="header-logo">
-                    <svg className="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                    <span className="logo-text">ParaSanté</span>
+                    <img
+                        src="/logo.png"
+                        alt="Puréva Logo"
+                        className="logo-icon"
+                        style={{ width: '40px', height: '40px', objectFit: 'contain' }}
+                    />
                 </div>
 
                 {/* Search Bar (Desktop) */}

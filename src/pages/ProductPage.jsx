@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Star, ShoppingCart, Heart, Share2, Minus, Plus, ChevronLeft } from 'lucide-react';
+import { Star, ShoppingCart ,Minus, Plus, ChevronLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -70,6 +70,7 @@ const ProductPage = ({ theme, toggleTheme }) => {
     const [promoCode, setPromoCode] = useState('');
     const [discount, setDiscount] = useState(0);
     const [promoError, setPromoError] = useState('');
+    const [showPromo, setShowPromo] = useState(false);
 
     const DELIVERY_FEES = {
         '16': 400, // Alger
@@ -299,20 +300,35 @@ const ProductPage = ({ theme, toggleTheme }) => {
                                         </div>
 
                                         <div className="promo-section">
-                                            <label className="form-label">Code promo</label>
-                                            <div className="promo-input-group">
-                                                <input
-                                                    type="text"
-                                                    placeholder="Entrez votre code"
-                                                    className="promo-input"
-                                                    value={promoCode}
-                                                    onChange={(e) => setPromoCode(e.target.value)}
-                                                />
-                                                <button onClick={handleApplyPromo} className="promo-btn">
-                                                    Appliquer
+                                            {!showPromo ? (
+                                                <button
+                                                    className="promo-toggle-btn"
+                                                    onClick={() => setShowPromo(true)}
+                                                >
+                                                     code promo ?
                                                 </button>
-                                            </div>
-                                            {promoError && <p className="text-red-500 text-sm mt-2">{promoError}</p>}
+                                            ) : (
+                                                <motion.div
+                                                    initial={{ opacity: 0, y: -10 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    className="promo-form"
+                                                >
+                                                    <label className="form-label">Code promo</label>
+                                                    <div className="promo-input-group">
+                                                        <input
+                                                            type="text"
+                                                            placeholder="Entrez votre code"
+                                                            className="promo-input"
+                                                            value={promoCode}
+                                                            onChange={(e) => setPromoCode(e.target.value)}
+                                                        />
+                                                        <button onClick={handleApplyPromo} className="promo-btn">
+                                                            Appliquer
+                                                        </button>
+                                                    </div>
+                                                    {promoError && <p className="text-red-500 text-sm mt-2">{promoError}</p>}
+                                                </motion.div>
+                                            )}
                                         </div>
                                     </motion.div>
                                 )}
@@ -323,10 +339,11 @@ const ProductPage = ({ theme, toggleTheme }) => {
                         <div className="product-actions">
                             <button className="add-to-cart-btn primary">
                                 <ShoppingCart size={20} />
-                                Ajouter au panier
-                            </button>
-                            <button className="add-to-cart-btn secondary bg-green-600 hover:bg-green-700 text-white flex-1 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5" style={{ background: '#16a34a', color: 'white' }}>
                                 Acheter maintenant
+                            </button>
+                            <button className="add-to-cart-btn primary">
+                                <ShoppingCart size={20} />
+                                Ajouter au panier
                             </button>
                         </div>
 

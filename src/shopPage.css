@@ -14,7 +14,7 @@
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255, 197, 211, 0.4) 0%, rgba(255, 197, 211, 0.1) 60%, transparent 80%);
+    background: radial-gradient(circle, rgba(219, 139, 137, 0.4) 0%, rgba(219, 139, 137, 0.1) 60%, transparent 80%);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     z-index: 0;
     pointer-events: none;
@@ -29,7 +29,7 @@
     left: -5%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(255, 197, 211, 0.3) 0%, rgba(255, 197, 211, 0.1) 60%, transparent 80%);
+    background: radial-gradient(circle, rgba(219, 139, 137, 0.3) 0%, rgba(219, 139, 137, 0.1) 60%, transparent 80%);
     border-radius: 50% 50% 20% 80% / 25% 80% 20% 90%;
     z-index: 0;
     pointer-events: none;
@@ -169,7 +169,7 @@
 }
 
 .dark .filter-tag {
-    background: rgba(179, 235, 242, 0.2);
+    background: rgba(219, 139, 137, 0.2);
     color: var(--primary-blue);
 }
 
@@ -351,13 +351,13 @@
 }
 
 .add-to-cart-icon:hover {
-    background: #1a1a1a;
+    background: var(--primary-blue);
     color: white;
 }
 
 .dark .add-to-cart-icon:hover {
-    background: #ffffff;
-    color: #000000;
+    background: var(--primary-blue);
+    color: white;
 }
 
 /* Pagination */
@@ -414,18 +414,20 @@
 
 /* Dialog Styles */
 .apply-button {
-    padding: 0.5rem 1rem;
-    background: #1a1a1a;
+    padding: 0.6rem 1.5rem;
+    background: var(--primary-blue);
     color: white;
     border: none;
     border-radius: 0.5rem;
     font-size: 0.875rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: all 0.3s ease;
 }
 
 .apply-button:hover {
-    opacity: 0.9;
+    background: var(--primary-blue-dark);
+    box-shadow: 0 4px 12px rgba(219, 139, 137, 0.2);
 }
 
 /* Responsive */

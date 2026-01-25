@@ -37,7 +37,7 @@ const AuthPage = () => {
                         <div className="w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
                             <div className="w-4 h-4 bg-white rounded-full"></div>
                         </div>
-                        <span className="text-xl font-semibold tracking-wide">ParaSanté</span>
+                        <span className="text-xl font-semibold tracking-wide">Puréva</span>
                     </div>
 
                     {/* Bottom Text - Hidden on mobile to make room for form, or displayed if desired. 

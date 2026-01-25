@@ -14,7 +14,7 @@ const AdminPromotions = () => {
         <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Promotions</h1>
-                <Button className="bg-black text-white dark:bg-white dark:text-black">
+                <Button className="bg-[#DB8B89] text-white hover:bg-[#C07573]">
                     <Plus className="w-4 h-4 mr-2" />
                     Nouveau Code Promo
                 </Button>
@@ -29,14 +29,14 @@ const AdminPromotions = () => {
 
                         <div className="relative z-10">
                             <div className="flex justify-between items-start mb-4">
-                                <span className="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-400 rounded-full text-xs font-bold uppercase tracking-wider">
+                                <span className="px-3 py-1 bg-pink-100 text-pink-800 dark:bg-[#DB8B89]/20 dark:text-[#DB8B89] rounded-full text-xs font-bold uppercase tracking-wider">
                                     {promo.type}
                                 </span>
                                 <span className={`flex h-2 w-2 rounded-full ${promo.status === 'Active' ? 'bg-green-500' : 'bg-red-500'}`}></span>
                             </div>
 
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">{promo.code}</h3>
-                            <p className="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">{promo.discount}</p>
+                            <p className="text-3xl font-extrabold text-[#DB8B89] mb-4">{promo.discount}</p>
 
                             <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400 mb-6">
                                 <span>Utilisé {promo.uses} fois</span>
